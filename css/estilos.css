@@ -1,0 +1,159 @@
+body, html{
+  margin: 0;
+  padding: 0;
+  color: #ccc;
+  font-family: 'Mukta', sans-serif;
+  background-color: #000;
+  scrollbar-color: yellow blue;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+strong{
+  color: white;
+}
+
+/* strong{
+  font-weight: bold;
+} */
+
+
+/* ANIMACIONES */
+
+@-webkit-keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+
+/* PANTALLAS */
+
+.pantalla{
+  display: block;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.inner-flex{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div#overlay-splash{
+  background-image: url('../img/fondo-splash.png');
+  padding: 50px;
+  overflow-y: auto;
+  font-size: 2em;
+}
+
+.logo-splash{
+  margin-bottom: 55px;
+}
+
+#sound-on{
+  font-size: 0.4em;
+  color: #bbb;
+  cursor: pointer;
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+  -webkit-animation-duration: 1.7s;
+}
+
+.creditos{
+  font-size: 0.4em;
+  color: #777;
+}
+
+div#overlay-tutorial {
+    background-image: url('../img/fondo-tutorial.png');
+    padding: 50px;
+    overflow-y: auto;
+    font-size: 0.9em;
+}
+
+button{
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  width: 150px;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+button:hover{
+  background: rgba(255,255,255,0.2);
+}
+
+div#overlay-gameover{
+  background: rgba(0,0,0,0.7);
+  padding: 50px;
+  overflow-y: auto;
+  font-size: 2em;
+}
+span#personas-rescatadas {
+    font-size: 0.5em;
+}
+
+
+/* INTERFAZ DEL JUEGO */
+
+canvas{
+  display: block;
+}
+
+.gui, canvas {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gui{
+  z-index: 10;
+}
+
+.indicador-vida{
+  position: absolute;
+  top: calc(5vh + 1.25em);
+  left: 50%;
+  width: 250px;
+  height: 4px;
+  transform: translate(-50%, 0);
+  background-color: #005;
+  box-shadow: -1px 2px 4px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -1px 2px 4px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 2px 4px 0px rgba(0,0,0,0.75);
+}
+
+#indicador-vida_fill{
+  transition: 0.4s;
+  width: 100%;
+  height: 100%;
+  background: rgb(58,201,221);
+  background: -webkit-linear-gradient(263deg, rgba(58,201,221,1) 0%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(263deg, rgba(58,201,221,1) 0%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(353deg, rgba(58,201,221,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#puntaje{
+  text-align: right;
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  font-size: 2.5em;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <title>El día antes del Final</title>
+</head>
+<body>
+
+  <!-- Audios -->
+
+  <audio id="inicio" loop src="sound/intro.mp3"></audio>
+  <audio id="juego" loop src="sound/juego.mp3"></audio>
+  <audio id="click" src="sound/click.wav"></audio>
+
+  <!-- Pantallas -->
+
+  <div id="overlay-splash" data-numpantalla=0 class="pantalla">
+    <div class="inner-flex">
+      <p id="sound-on">[Clic aquí para habilitar el sonido 🔊]</p>
+      <img class="logo-splash" src="img/logo.png">
+      <button id="jugar-inicio">Jugar</button>
+      <p class="creditos">Programación, arte y música: Maximiliano Cortés</p>
+    </div>
+  </div>
+
+  <div id="overlay-tutorial" data-numpantalla=1 class="pantalla">
+      <button id="omitir">[omitir intro y tutorial]</button>
+      <p>Una noche, al despertar de un extraño sueño, te diste cuenta de que tu vida ya no sería la misma; sin saber cómo ni por qué, quedaste en un limbo en medio de dos dimensiones: una está poblada por demonios, y en la otra hay seres humanos. Amarías volver al mundo humano, pero lo cierto es que una parte de tí está anclada irreversiblemente al otro mundo, y te es imposible volver del todo.</p>
+      <p>Hace poco, te enteraste de que los demonios se están preparando para atacar la dimensión humana; tu misión es advertir y rescatar a cuantos humanos puedas, evitando que los demonios te maten antes. La invasión de los demonios ya no se puede evitar; pero se puede hacer lo posible para que sea un poco menos catastrófica.</p>
+      <h2>CÓMO JUGAR</h2>
+      <p>Solo puedes ver una dimensión a la vez; sin embargo, <strong>en todo momento estás interactuando con ambas</strong>, lo que significa que los demonios te pueden atacar mientras estás en la dimensión humana, y puedes rescatar humanos mientras estás en la dimensión de los demonios. Ir y venir entre ambas dimensiones te va a ayudar a tener una idea general de la situación, y a rescatar a la mayor cantidad de humanos posible. </p>
+      <ul>
+        <li>Presiona <strong>ESPACIO</strong> para cambiar de dimensión.</li>
+        <li>Mueve el <strong>MOUSE</strong> para moverte.</li>
+        <li>Si tocas a un demonio, te hará daño y verás un breve brillo rojo; si tocas a un humano, lo rescatas y al mismo tiempo repones parte de tu salud. En este caso la pantalla va a brillar brevemente en blanco.</li>
+      </ul>
+      <button id="jugar">Jugar</button>
+  </div>
+
+  <div id="overlay-gameover" data-numpantalla=3 class="pantalla">
+    <div class="inner-flex">
+      <p>Game Over</p>
+      <span id="personas-rescatadas"></span>
+      <button id="jugar-de-nuevo">Jugar de nuevo</button>
+      <button id="volver-al-inicio">Volver al inicio</button>
+    </div>
+  </div>
+
+  <!-- Intefaz de juego -->
+
+  <div class="gui">
+    <div class="indicador-vida">
+      <div id="indicador-vida_fill"></div>
+    </div>
+    <span id="puntaje">0</span>
+  </div>
+
+  <!-- Scripts -->
+
+  <script src="js/p5.min.js" charset="utf-8"></script>
+  <script src="js/sound.js" charset="utf-8"></script>
+  <script src="js/config.js" charset="utf-8"></script>
+  <script src="js/clasesp5.js" charset="utf-8"></script>
+  <script src="js/juego.js" charset="utf-8"></script>
+  <script src="js/interfaz.js" charset="utf-8"></script>
+  </body>
+</html>
